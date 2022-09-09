@@ -1,0 +1,5 @@
+
+// run these query in your db after install
+
+SET GLOBAL sql_mode='';
+SET GLOBAL sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
