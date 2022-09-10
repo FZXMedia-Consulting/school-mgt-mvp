@@ -140,7 +140,7 @@ $biototal = $kas_framework->countAll('staff');
 	$staff_dob = trim(substr($staff_dob, - 4));
 	// check if it a number and looks like a year
 
-	@$checkdt = checkdate(1, 1, $staff_dob);
+	@$checkdt = checkdate(1, 1, (int)$staff_dob);
 	if($checkdt != true){
 		$dob = '18++';
 		} else {
