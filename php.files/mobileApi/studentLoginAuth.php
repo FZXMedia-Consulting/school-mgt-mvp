@@ -14,9 +14,6 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
 
     if ($kas_framework->strIsEmpty($username) or $kas_framework->strIsEmpty($password)) 
     {
-        // $kas_framework->showinfowithBlue('Username or Password Empty!');
-        // $kas_framework->buttonController('#signin', 'enable');
-
         echo json_encode(['response' => false, 'message' => "Username or Password Empty!", 'data' => ""]);
     } 
     else
