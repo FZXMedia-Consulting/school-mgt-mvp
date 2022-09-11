@@ -17,16 +17,6 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
     }
     else
     {
-
-        // $querySQL = "SELECT * FROM web_students WHERE (user_n = :username OR email = :username)";
-        // $db_handle = $dbh->prepare($querySQL);
-        // $db_handle->bindParam(':username', $username);
-        // $db_handle->execute();
-        // $get_rows = $db_handle->rowCount();
-        // $loginObj = $db_handle->fetch();
-        // $db_handle = null;
-
-
         $querySQL = "SELECT * FROM web_users AS wu, staff AS s WHERE (wu.web_users_username = :username or s.staff_email = :username) AND wu.web_users_password = '".$password."' AND (wu.web_users_type = 'T' or wu.web_users_type = 'S') AND s.staff_id = wu.web_users_relid LIMIT 1";
         $db_handle = $dbh->prepare($querySQL);
         $db_handle->bindParam(':username', $username); $db_handle->bindParam(':username', $username); 
