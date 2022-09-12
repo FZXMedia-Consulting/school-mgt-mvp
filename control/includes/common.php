@@ -29,7 +29,7 @@ function tosql($value, $type)
       return str_replace (",", ".", doubleval($value));
     else
     {
-      if(get_magic_quotes_gpc() == 0)
+      if(false)
       {
         $value = str_replace("'","''",$value);
         $value = str_replace("\\","\\\\",$value);
@@ -48,7 +48,7 @@ function tosql($value, $type)
 
 function strip($value)
 {
-  if(get_magic_quotes_gpc() == 0)
+  if(false)
     return $value;
   else
     return stripslashes($value);

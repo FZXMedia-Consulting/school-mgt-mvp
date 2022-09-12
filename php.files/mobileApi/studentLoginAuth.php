@@ -6,11 +6,6 @@ $kas_framework->safesession();
 extract($_POST);
 //echo md5('open');
 
-//make sure that the file is not directly accessed from the url
-// if (!isset($byepass)) {
-// 	exit('This File is Classified');
-// }
-
 if(isset($_POST["username"]) && isset($_POST["password"]))
 {
 
@@ -19,25 +14,25 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
 
     if ($kas_framework->strIsEmpty($username) or $kas_framework->strIsEmpty($password)) 
     {
-        // $kas_framework->showinfowithBlue('Username or Password Empty!');
-        // $kas_framework->buttonController('#signin', 'enable');
-
         echo json_encode(['response' => false, 'message' => "Username or Password Empty!", 'data' => ""]);
     } 
     else
     {
-        $querySQL = "SELECT * FROM web_students WHERE (user_n = :username OR email = :username) AND pass = '".md5($password)."' LIMIT 1";
+        //$querySQL = "SELECT * FROM web_students WHERE (user_n = :username OR email = :username) AND pass = '$password' LIMIT 1";
+        $querySQL = "SELECT * FROM web_students WHERE (user_n = :username OR email = :username)";
         $db_handle = $dbh->prepare($querySQL);
         $db_handle->bindParam(':username', $username);
         $db_handle->execute();
         $get_rows = $db_handle->rowCount();
-        $loginObj = $db_handle->fetch(PDO::FETCH_OBJ);
-        $db_handle = null;		
+        $loginObj = $db_handle->fetch();
+        $db_handle = null;
         
+        print_r($loginObj);
 
-        if ($get_rows == 1 and $loginObj->pass == md5($password))
+        // if ($get_rows == 1 and $loginObj["pass"] == md5($password))
+        if ($get_rows == 1 and $loginObj["pass"] == $password)
         {
-            if ($loginObj->status != '1')
+            if ($loginObj["status"] != '1')
             {
                 // $kas_framework->showDangerCallout('This Account is not Active or has been Blocked. 
                 // 	<br /><a href="'.$kas_framework->help_url('?topic=blocked-check-in').'" target="_blank">&raquo;Explanation?</a>');
@@ -47,7 +42,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
             }
             else
             {
-                $student_rel_id = $loginObj->stdbio_id;
+                $student_rel_id = $loginObj["stdbio_id"];
                 $admit_status = $kas_framework->getValue('admit', 'studentbio', 'studentbio_id', $student_rel_id);
                     
                 /* checking for the admit status and then refering to the right link */
@@ -110,14 +105,14 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
                 /* update the last logged in info  */
                 if ($admit_status == '0' or $admit_status == '1' or $admit_status == '2')
                 {
-                    $kas_framework->showInfoCallout('Logged in. Please wait...');
+                    //$kas_framework->showInfoCallout('Logged in. Please wait...');
                     $querySQL = "UPDATE web_students SET last_log = '".date('d/m/Y @ H:i:s')."' WHERE user_n = '".$username."' LIMIT 1";
                     $db_handle = $dbh->prepare($querySQL);
                     $db_handle->execute();
                     $db_handle = null;
                     // print '<script type="text/javascript"> self.location = "'.$kas_framework->url_root('redirect?httptrack='). $salt. '"</script>';
 
-                    echo json_encode(['response' => true, 'message' => "Login Successful", 'data' => $loginObj->user_n]);
+                    echo json_encode(['response' => true, 'message' => "Login Successful", 'data' => $loginObj["user_n"]]);
                 }
             
             }

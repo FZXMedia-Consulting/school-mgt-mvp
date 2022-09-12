@@ -216,7 +216,7 @@ if(isset($_GET['graduates'])){
 		$std_yob = trim(substr($std_yob, -4));
 		// check if it a number and looks like a year
 
-		@$checkdt = checkdate(12, 31, $std_yob);
+		@$checkdt = checkdate(12, 31, (int)$std_yob);
 		if($checkdt != true){
 			$dob = "1++ ";
 		}else{

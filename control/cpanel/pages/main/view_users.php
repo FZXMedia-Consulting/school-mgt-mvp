@@ -133,7 +133,7 @@ if ($std_entry_class_id == NULL){
 
 $lastgrade = $kas_framework->countAll('grades');
 
-$std_graduation_class = $lastgrade-$std_entry_class_id;
+$std_graduation_class = (int)$lastgrade-(int)$std_entry_class_id;
 $std_graduation_session_id = $std_entry+$std_graduation_class+1;
 // make sure that the school years are created large
 
@@ -150,7 +150,7 @@ $std_graduation_session = "soonest";// Error 20: School years are not created, o
 	// the age calculate
 	$std_yob=substr($std_yob, -4);
 	// version 2
-	@$checkdt = checkdate(12, 31, $std_yob);
+	@$checkdt = checkdate(12, 31, (int)$std_yob);
 	if($checkdt != true){
 		$std_dob = "1++ ";
 	}else{
@@ -279,7 +279,18 @@ $title= $std_lname."'s Profile (".$std_username.")";
 			</div></p>
 						<p><?php //echo ($status == 1)? $myp->AlertInfo('', 'This Student Can log in. Email Verified'): $myp->AlertError('', 'Cannot Log In. Email Not Verified. Code: '.$status);  ?> </p>
 
-			<p><?php echo ($status == $code)? $myp->AlertInfo('', 'Currently Forced to Verify Email'): ($status == 1)? $myp->AlertInfo('', 'This Student Can log in. Email Verified'):$myp->AlertError('', 'Cannot Log In. Email Not Verified. Code: '.$status);  ?> </p>
+			<p>
+        <?php
+
+        if($status == $code)
+          $myp->AlertInfo('', 'Currently Forced to Verify Email');
+        else if(($status == 1))
+          $myp->AlertInfo('', 'This Student Can log in. Email Verified');
+        else
+          $myp->AlertError('', 'Cannot Log In. Email Not Verified. Code: '.$status);
+
+         //echo ($status == $code)? $myp->AlertInfo('', 'Currently Forced to Verify Email'): ($status == 1)? $myp->AlertInfo('', 'This Student Can log in. Email Verified'):$myp->AlertError('', 'Cannot Log In. Email Not Verified. Code: '.$status);  ?> 
+      </p>
 		  </div>			
 		</div>   
 

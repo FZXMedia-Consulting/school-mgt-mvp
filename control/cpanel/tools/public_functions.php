@@ -52,7 +52,7 @@ public function CleanForSQL($value, $type) {
       return str_replace (",", ".", doubleval($value));
     else
     {
-      if(get_magic_quotes_gpc() == 0)
+      if(false)
       {
         $value = str_replace("'","''",$value);
         $value = str_replace("\\","\\\\",$value);
