@@ -126,18 +126,18 @@ if(isset($_SESSION['adbatch'])){// we have a class to pull data from?>
 		while ($std = $dbh_pullassout->fetch(PDO::FETCH_OBJ)) {
 
 		$sn = $sn + 1;
-		$rowid = $std['studentbio_id'];
-		$student_fname = $std['studentbio_fname'];
-		$student_mname = $std['studentbio_mname'];
-		$student_lname = $std['studentbio_lname'];
-		$student_image = $std['studentbio_pictures'];
-		$student_entry_id = $std['studentbio_entry_grade'];
-		$student_reg = $std['studentbio_internalid'];
+		$rowid = $std->studentbio_id;
+		$student_fname = $std->studentbio_fname;
+		$student_mname = $std->studentbio_mname;
+		$student_lname = $std->studentbio_lname;
+		$student_image = $std->studentbio_pictures;
+		$student_entry_id = $std->studentbio_entry_grade;
+		$student_reg = $std->studentbio_internalid;
 
-		$std_user= $std['user_n'];
-		$std_from_no= $std['form_no'];
-		$std_regdate= $std['reg_date'];
-		$std_ad_badge_id = $std['admission_badge'];
+		$std_user= $std->user_n;
+		$std_from_no= $std->form_no;
+		$std_regdate= $std->reg_date;
+		$std_ad_badge_id = $std->admission_badge;
 		// admission badge name
 		$std_ad_badge_title = $kas_framework->getValue('badge_name', 'tbl_admission', 'id', $std_ad_badge_id);
 		// entry class name

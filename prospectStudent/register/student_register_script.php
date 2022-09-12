@@ -102,20 +102,37 @@ if ($kas_framework->strIsEmpty($surname) or $kas_framework->strIsEmpty($lastname
 			exit($kas_framework->showDangerCallout('Could not Verify Pin <a href="'.$kas_framework->help_url('?topic=query-failed').'" target="blank">Explanation?</a>'));
 		}
 	
-	/* no need to change the insert positions // all will be inserted */
-	$insert_into_web_students = "INSERT INTO web_students 
-		(stdbio_id, identify, email, user_n, pass, status, reg_date, admission_badge)
-		VALUES ('".$insert_id_default."', '".$user_identify_serial."', :email, :user_username, '".md5($password1)."', :confirmation_code, '".date('d/m/Y')."', '".$admission_batch_id."')";
-			$db_insert_into_web_students = $dbh->prepare($insert_into_web_students);
-			$db_insert_into_web_students->bindParam(':email', $email); $db_insert_into_web_students->bindParam(':user_username', $user_username); $db_insert_into_web_students->bindParam(':confirmation_code', $confirmation_code);
-			$db_insert_into_web_students->execute();
-			$get_insert_into_web_students_rows = $db_insert_into_web_students->rowCount();
-			$db_insert_into_web_students = null;
-			if ($get_insert_into_web_students_rows == 0) {
-				$kas_framework->buttonController('#signup', 'enable');
-				//print mysql_error();
-				exit($kas_framework->showDangerCallout('Could not Create Login Account <a href="'.$kas_framework->help_url('?topic=query-failed').'" target="blank">&raquo;Explanation?</a>'));
-			}
+	$get_rows = 0;
+	$querySQL = "SELECT * FROM web_students WHERE email = :email";
+	$db_handle = $dbh->prepare($querySQL);
+	$db_handle->bindParam(':email', $email);
+	$db_handle->execute();
+	$get_rows = $db_handle->rowCount();
+	$loginObj = $db_handle->fetch();
+	$db_handle = null;
+
+	if ($get_rows != 1)
+	{
+		/* no need to change the insert positions // all will be inserted */
+		$insert_into_web_students = "INSERT INTO web_students 
+			(stdbio_id, identify, email, user_n, pass, status, reg_date, admission_badge)
+			VALUES ('".$insert_id_default."', '".$user_identify_serial."', :email, :user_username, '".md5($password1)."', :confirmation_code, '".date('d/m/Y')."', '".$admission_batch_id."')";
+				$db_insert_into_web_students = $dbh->prepare($insert_into_web_students);
+				$db_insert_into_web_students->bindParam(':email', $email); $db_insert_into_web_students->bindParam(':user_username', $user_username); $db_insert_into_web_students->bindParam(':confirmation_code', $confirmation_code);
+				$db_insert_into_web_students->execute();
+				$get_insert_into_web_students_rows = $db_insert_into_web_students->rowCount();
+				$db_insert_into_web_students = null;
+				if ($get_insert_into_web_students_rows == 0) {
+					$kas_framework->buttonController('#signup', 'enable');
+					//print mysql_error();
+					exit($kas_framework->showDangerCallout('Could not Create Login Account <a href="'.$kas_framework->help_url('?topic=query-failed').'" target="blank">&raquo;Explanation?</a>'));
+				}
+	}
+	else
+	{
+		// $kas_framework->buttonController('#signup', 'disable');
+		exit($kas_framework->showDangerCallout('Email Address is already Registered'));
+	}
 	
 	$insert_into_studentcontact = "INSERT INTO student_contact (studentcontact_studentid)  VALUES ('".$insert_id_default."')";
 	$db_insert_into_studentcontact = $dbh->prepare($insert_into_studentcontact);

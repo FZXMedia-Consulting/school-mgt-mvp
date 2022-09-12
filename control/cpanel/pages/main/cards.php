@@ -61,7 +61,7 @@ $pnpairs= 12;
 $snpairs= 10;
 
 $letters = md5('LVMGWABFCRSHIJKDEXZNOPYQTU');
-$numbers = '8937012456';
+$numbers = '8937012456102';
 $letters2 = md5('LMNOPQRSTUVWXYZABCDEFGHIJK');
 $numbers2 = '5678901234';
 $letters3 = md5('STUVWXLMNOPQRYZGHIJKABCDEF');
