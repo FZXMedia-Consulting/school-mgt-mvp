@@ -3,12 +3,27 @@
 class configurations {
 
 	public function url_root($flink) {
-		return "http://127.0.0.1/hisp.portal.com/". $flink;
+		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+        $url = "https://".$_SERVER['HTTP_HOST'];
+        else
+        $url = "http://".$_SERVER['HTTP_HOST'];
+        // Append the host(domain name, ip) to the URL.
+
+		//file directory
+		$pathInPieces = explode(DIRECTORY_SEPARATOR , __FILE__);
+
+		return  $url."/".$pathInPieces[3].DIRECTORY_SEPARATOR."/".$flink;
 	}
 	
 	public function pageReferer($referPage) {
+		if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+        $url = "https://";
+        else
+        $url = "http://";
+        // Append the host(domain name, ip) to the URL.
+        $url = $url.$_SERVER['HTTP_HOST'];
 		/* this will house the raw link without the http://, https:// and www. for clarity purpose */
-		return (substr_count(@$_SERVER['HTTP_REFERER'], '127.0.0.1/hisp.portal.com/'.$referPage) == 0)? false: true;
+		return (substr_count(@$_SERVER['HTTP_REFERER'], $url.$referPage) == 0)? false: true;
 	}
 	
 	public function help_url($flink) {

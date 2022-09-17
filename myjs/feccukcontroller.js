@@ -1,4 +1,10 @@
-url_root = 'http://127.0.0.1/hisp.portal.com/';
+
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+$url = "https://";
+else
+$url = "http://";
+// Append the host(domain name, ip) to the URL.
+url_root = $url.$_SERVER['HTTP_HOST'];
 
 window_width = $(document).innerWidth() + 17;
 body_height = $('body').innerHeight();

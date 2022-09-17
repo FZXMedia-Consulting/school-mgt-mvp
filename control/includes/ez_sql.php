@@ -17,9 +17,9 @@ include_once "configuration.php";
 	// ==================================================================
 	//	this page Constants
 	define("EZSQL_VERSION","1.01");
-	define("OBJECT","OBJECT",true);
-	define("ARRAY_A","ARRAY_A",true);
-	define("ARRAY_N","ARRAY_N",true);
+	define("OBJECT","");
+	define("ARRAY_A","");
+	define("ARRAY_N","");
 
 	// ==================================================================
 	//	The Main Class
