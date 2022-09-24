@@ -20,7 +20,7 @@ Entry year&nbsp;&nbsp;&nbsp;
 	</select><br />
 
 ACCESS School&nbsp;&nbsp;&nbsp;
-  <select name="staffschool" id="label" disabled style="width:250px">
+  <select name="staffschool" id="label" style="width:250px">
   <option id="0"> ALL School</option>
 	  <?php  $kas_framework->getallFieldinDropdownOption('tbl_grade_domains', 'school_names', 'id', $school);    ?>
 	</select><br />

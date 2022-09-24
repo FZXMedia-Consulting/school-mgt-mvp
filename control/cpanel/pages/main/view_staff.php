@@ -194,7 +194,7 @@ if($picture==NULL){if($sex =="Male"){$picture = 'av_male.png';}else{$picture = '
 $staff_dob = trim(substr($staff_dob, -4));// pick the year only
 // check if it a number and looks like a year
 
-@$checkdt = checkdate(1, 1, $staff_dob);
+@$checkdt = checkdate(1, 1, (int)$staff_dob);
 if($checkdt != true){
 	$dob = '18++';
 	}else{
@@ -242,7 +242,7 @@ $title= $lname."'s Profile (".$username.")";
             <hr /><p>Class: <?php echo $staff_class.' '.$staff_class_main;?></p>
 			<p>Class Room: <?php echo $staff_class_room;?></p>
 
-            <p>Students:<?php echo $total_students;?></p>
+            <p>Students:<?php echo isset($total_students)?$total_students:"0";?></p>
           </div>
 		  
 		  <hr />
@@ -254,7 +254,16 @@ $title= $lname."'s Profile (".$username.")";
 			</div></p>
 			<p>
 			
-			<?php echo ($status == $code)? $myp->AlertInfo('', 'Staff Forced to verify Email'): ($status == 1)? $myp->AlertInfo('', 'This Staff Can log in. Email Verified'): $myp->AlertError('', 'Cannot Log In. Email Not Verified. Code: '.$status);  ?> 
+      <?php
+
+        if($status == $code)
+          $myp->AlertInfo('', 'Staff Forced to verify Email');
+        else if(($status == 1))
+          $myp->AlertInfo('', 'his Staff Can log in. Email Verified');
+        else
+          $myp->AlertError('', 'Cannot Log In. Email Not Verified. Code: '.$status);
+        ?>
+
 			</p>
 				<dl><dd>Registered 0n: <?php echo $entry;?></dd>
 					<dd>Last login Date: <?php echo $last_log;?></dd>

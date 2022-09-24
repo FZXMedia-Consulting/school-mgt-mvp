@@ -578,7 +578,8 @@ class SMTP
     public function connected()
     {
         if (is_resource($this->smtp_conn)) {
-            $sock_status = stream_get_meta-data($this->smtp_conn);
+            //$sock_status = stream_get_meta-data($this->smtp_conn);
+            $sock_status = $this->smtp_conn;
             if ($sock_status['eof']) {
                 // The socket is valid but we are not connected
                 $this->edebug(
@@ -1083,7 +1084,8 @@ class SMTP
                 break;
             }
             // Timed-out? Log and break
-            $info = stream_get_meta-data($this->smtp_conn);
+            // $info = stream_get_meta-data($this->smtp_conn);
+            $info = $this->smtp_conn;
             if ($info['timed_out']) {
                 $this->edebug(
                     'SMTP -> get_lines(): timed-out (' . $this->Timeout . ' sec)',

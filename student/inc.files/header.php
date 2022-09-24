@@ -26,7 +26,7 @@
         <header class="header" style="position:fixed;">
             <a href="<?php print $kas_framework->url_root('student/dashboard'); ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-              KaSP -> Student 
+              FZX -> Student 
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

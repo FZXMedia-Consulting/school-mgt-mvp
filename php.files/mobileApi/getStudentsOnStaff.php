@@ -23,7 +23,6 @@ if(isset($_POST["staff_post_id"]))
         echo "Mobile: ".$staffObj->staff_mobile;
         echo "Image: SITEURL../../pictures/".$staffObj->staff_image
 
-
         $getStdQuery = "SELECT * FROM studentbio AS sb, student_grade_year AS sgy, teacher_grade_year AS tgy WHERE sb.studentbio_form_master = '".$staffObj->staff_id."' AND sgy.student_grade_year_student = sb.studentbio_id AND tgy.teacher = '".$staffObj->staff_id."' AND sgy.student_grade_year_year = '".$current_year."' AND tgy.session = '".$current_year."' AND sgy.student_grade_year_year = tgy.session ";
         
         $dbh_getStdQuery = $dbh->prepare($getStdQuery); $dbh_getStdQuery->execute(); 

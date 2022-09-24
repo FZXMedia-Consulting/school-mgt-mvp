@@ -16,6 +16,7 @@ $current_year = $_SESSION['CurrentYear'];
 // count number of parents
 $querybio= $kas_framework->countAll('student_post');
 
+	$biototal = $querybio;
 	// since we are displaying 1000 only
 	if($biototal > 1000){
 	//echo "its above 10000";
@@ -157,7 +158,7 @@ $poster__id = $fetchObj_studPost->poster_id;
 					$post_image = $std['post_image'];
 					$post_date = $std['post_date'];
 					$views = $std['views'];
-					$date = $std['date'];
+					//$date = $std['date'];
 					$liker_id = $std['liker_id'];
 
 				$comments = $kas_framework->countRestrict1('student_post_reply', 'post_rel_id', $post_id);

@@ -117,11 +117,11 @@ if($rowCount == 1){
 						while ($std =  $fetchObj = $dbh_pullassout->fetch(PDO::FETCH_OBJ)) {
 
 									$sn = $sn + 1;
-									$wallet_id = $std['id'];
-									$wallet_std_id = $std['student_id'];
-									$balance = $std['balance'];
-									$date_last_used = $std['date_last_used'];
-									$status = $std['status'];
+									$wallet_id = $std->id;
+									$wallet_std_id = $std->student_id;
+									$balance = $std->balance;
+									$date_last_used = $std->date_last_used;
+									$status = $std->status;
 
 
 							$student_fname= $kas_framework->getValue('studentbio_fname', 'studentbio', 'studentbio_id', $wallet_std_id);

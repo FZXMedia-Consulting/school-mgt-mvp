@@ -12,7 +12,7 @@ if (file_exists(constant('single_return').'php.files/mailbox_handlers/retrieve-m
         <header class="header" style="position:fixed;">
             <a href="<?php print $kas_framework->url_root('prospectStudent/dashboard'); ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-              KaSP -> Prospect 
+              FZX -> Prospect 
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

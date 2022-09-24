@@ -69,13 +69,17 @@ require (constant('single_return').'inc.files/cookieWriter.php');
 							
 							$class = $param_db_getClass_Obj->grade_class;
 							$class_room = $param_db_getClass_Obj->grade_class_room;
-								if ($class == '0') { $intro = 'Not Yet a Form Master'; } 
-								else {
-									$getClass = $kas_framework->userGradeClass($class_room, $class);
-									//$getClass = $kas_framework->getValue('grades_desc', 'grades', 'grades_id', $class);
-									$intro = 'Form Master of '.$getClass.' Class';
-								}
+                            if ($class == '0') { $intro = 'Not Yet a Form Master'; } 
+                            else {
+                                $getClass = $kas_framework->userGradeClass($class_room, $class);
+                                //$getClass = $kas_framework->getValue('grades_desc', 'grades', 'grades_id', $class);
+                                $intro = 'Form Master of '.$getClass.' Class';
+                            }
 					}
+                    else
+                    {
+                        $intro = "";
+                    }
 			?>
 			
 			<h2> <?php $kas_framework->displaySchoolLogo('50', 'circle', '0 5px 0 0');

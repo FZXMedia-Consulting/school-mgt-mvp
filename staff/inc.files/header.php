@@ -24,7 +24,7 @@ if (file_exists('mytools/calendar/retrieve-task+counter.php')) {
         <header class="header" style="position:fixed;">
             <a href="<?php print $kas_framework->url_root('staff/dashpanel/'); ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                KaSP -> Staff
+                FZX -> Staff
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

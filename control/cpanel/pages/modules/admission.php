@@ -57,23 +57,33 @@ if(isset($_POST['takeaction'])) {
 switch($dowhat){
 	case 'admit':
 		$dbh->beginTransaction();
+		
+	try
+	{
+		// mark the student as admited
+		$query1= "UPDATE studentbio SET admit = '1', studentbio_entry_grade ='$class_id', studentbio_internalid ='$std_regis_no' WHERE studentbio_id='$student'";
+		// add the student 
+		$query2= "INSERT INTO student_grade_year (student_grade_year_student,student_grade_year_year,student_grade_year_grade) VALUES('$student','$nyear','$class_id')";
 
-	// mark the student as admited
-	$query1= "UPDATE studentbio SET admit = '1', studentbio_entry_grade ='$class_id', studentbio_internalid ='$std_regis_no' WHERE studentbio_id='$student'";
-	// add the student 
-	$query2= "INSERT INTO student_grade_year (student_grade_year_student,student_grade_year_year,student_grade_year_grade) VALUES('$student','$nyear','$class_id')";
-	$query3= "UPDATE web_students SET form_no = '$std_regis_from_no' WHERE stdbio_id = '$student'";
-	
-	$dbh_query1 = $dbh->prepare($query1); $dbh_query1->execute(); $rowCount1 = $dbh_query1->rowCount(); $dbh_query1 = null;
-	$dbh_query2 = $dbh->prepare($query2); $dbh_query2->execute(); $rowCount2 = $dbh_query2->rowCount(); $dbh_query2 = null;
-	$dbh_query3 = $dbh->prepare($query3); $dbh_query3->execute(); $rowCount3 = $dbh_query3->rowCount(); $dbh_query3 = null;
-	
-	if($rowCount1 == 1 and $rowCount2 == 1 and $rowCount3 == 1){
-		$dbh->commit();
-		$myp->AlertSuccess('Good Job! ', 'You successfully admitted '.$studentname.' into '.$classname.' in the '.$cyear.' Academic session');
-	} else {
-		$dbh->rollBack();
-		$myp->AlertError('Fatal Error! ', 'There is trouble with the database configuration, make sure you did not switch year backward before admission protocols.');
+		$query3= "UPDATE web_students SET form_no = '$std_regis_from_no' WHERE stdbio_id = '$student'";
+		
+		$dbh_query1 = $dbh->prepare($query1); $dbh_query1->execute(); $rowCount1 = $dbh_query1->rowCount(); $dbh_query1 = null;
+		$dbh_query2 = $dbh->prepare($query2); $dbh_query2->execute(); $rowCount2 = $dbh_query2->rowCount(); $dbh_query2 = null;
+		$dbh_query3 = $dbh->prepare($query3); $dbh_query3->execute(); $rowCount3 = $dbh_query3->rowCount(); $dbh_query3 = null;
+		
+		// echo "<script>console.log(".$std_regis_from_no.")</script>";
+
+		if($rowCount1 == 1 and $rowCount2 == 1 and $rowCount3 == 1){
+			$dbh->commit();
+			$myp->AlertSuccess('Good Job! ', 'You successfully admitted '.$studentname.' into '.$classname.' in the '.$cyear.' Academic session');
+		} else {
+			$dbh->rollBack();
+			$myp->AlertError('Fatal Error! ', 'There is trouble with the database configuration, make sure you did not switch year backward before admission protocols.');
+		}
+	}
+	catch (Exception $eax)
+	{
+		$myp->AlertError('Fatal Error! ', $eax);
 	}
 	break;
 

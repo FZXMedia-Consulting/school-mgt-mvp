@@ -142,10 +142,10 @@ $school_mail = $kas_framework->getValue('email', 'tbl_school_profile', 'id', '1'
                                             $kas_framework->showDangerCallout("No Email or Username found with the details supplied. Please try again");
                                         } else if ($paramObj->status == '0') {
                                             $kas_framework->showDangerCallout("This account was blocked by the school administration. Please consult the school administrator");
-                                        } else if ($paramObj>status == '1') {
+                                        } else if ($paramObj->status == '1') {
 											$kas_framework->showDangerCallout("This account is active. Please check the username supplied");
 										} else {
-                                            $send_mail = $mailing_list->SendUserConfirmationEmail($paramObj->email, $user_n, $school_mail, $paramObj->status, $kas_framework->returnUserSchool(''), 'student');
+                                            $send_mail = $mailing_list->SendUserConfirmationEmail($paramObj->email, $paramObj->user_n, $school_mail, $paramObj->status, $kas_framework->returnUserSchool(''), 'student');
 												$kas_framework->showInfoCallout("A mail has been sent to your email address. Please go and click on the confirmation link.  Emails may take up to 5 Minutes. Please be Patient.");
                                            
                                         }

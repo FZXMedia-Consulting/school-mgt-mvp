@@ -164,7 +164,7 @@ include_once "configuration.php";
 
 		function query_mysql($query)
 		{
-			global ${$this->ez_sql_object};
+			//global ${$this->ez_sql_object};
 			
 			// Make sure query is not on multiple lines
 			$query = str_replace("\n", '', $query);
@@ -552,7 +552,7 @@ include_once "configuration.php";
 		*/
 
 		function get_num_results($query) {
-			global ${$this->ez_sql_object};
+			//global ${$this->ez_sql_object};
 
 			if ( $this->set_num_results )
 			{
@@ -564,7 +564,7 @@ include_once "configuration.php";
 			else
 			{
 				// Count total number of results for this query
-				$this->num_results =  $db->get_var("SELECT count(*) FROM", $query);
+				//$this->num_results =  $db->get_var("SELECT count(*) FROM", $query);
 			}
 		}
 
