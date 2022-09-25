@@ -43,7 +43,7 @@ $dbh = false;
 $database_host = 'localhost';
 $database_user = 'root';
 $database_pass = '';
-$database_db = 'school_mgt';
+$database_db = 'school_portal';
 $database_type = 'mysql';
 
  $dsn = $database_type.":dbname=".$database_db.";host=".$database_host;

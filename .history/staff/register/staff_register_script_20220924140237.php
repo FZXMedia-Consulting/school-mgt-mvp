@@ -114,7 +114,7 @@ if ($kas_framework->strIsEmpty($firstname) or $kas_framework->strIsEmpty($lastna
 	$school_mail = $kas_framework->getValue('email', 'tbl_school_profile', 'id', '1');
 	$send_mail = $mailing_list->SendUserConfirmationEmail($email, $web_users_username, $school_mail, $confirmation_code, $kas_framework->returnUserSchool(''), 'staff');
 	
-	// $send_mail = true; //Remove this on Production
+	$send_mail = true; //Remove this on Production
 
 	if ($send_mail == false) {
 		$kas_framework->buttonController('#signup', 'enable');
