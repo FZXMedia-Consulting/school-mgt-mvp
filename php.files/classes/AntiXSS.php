@@ -1,14 +1,4 @@
 <?php
-/*  
-	kAsTech FrameWork v2.42 for AntiXSS
-	Designed by: kAsTechnology Network
-	Developer: Kelvin Ugbana
-	Lagos, Nigeria
-	Date: 13th July 2019
-	
-	Changelog: 
-		v2.42 Added the HTML Purifier			
-*/
 
 class AntiXSS {
 	 

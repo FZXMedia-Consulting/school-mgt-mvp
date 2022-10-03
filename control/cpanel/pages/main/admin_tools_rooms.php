@@ -19,7 +19,7 @@ $cardterm = $_SESSION['CurrentTerm'];
 	  $queryj = "select * from grades";
 	  $dbh_queryj = $dbh->prepare($queryj); $dbh_queryj->execute(); $mygrade = $dbh_queryj->rowCount();
 	  
-		//upgraded by Ultimate Kelvin C - Kastech
+		//upgraded by Unknown - FZX
 		while ($get_grades = $dbh_queryj->fetch(PDO::FETCH_OBJ)) {
 			print '<a class="btn btn-sm btn-default" style="margin:4px" href="main?page=administrative&tool=rooms&gid='.$get_grades->grades_id.'">'.$get_grades->grades_desc.'</a>';
 		}

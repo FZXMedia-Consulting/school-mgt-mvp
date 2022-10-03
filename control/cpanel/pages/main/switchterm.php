@@ -46,7 +46,7 @@ if (isset($_GET['id'])){
   <a href="year_simulator" class="btn btn-default btn-sm"><strong>Simulate/Switch Term backward</strong></a><br />
 	  
 	  <?php
-	  //upgraded by Ultimate Kelvin C - Kastech
+	  //upgraded by Unknown - FZX
 	  $queryj = "SELECT grade_terms_id, grade_terms_desc FROM grade_terms ORDER BY grade_terms_id";
 		$dbh_queryj = $dbh->prepare($queryj); $dbh_queryj->execute();
 	  

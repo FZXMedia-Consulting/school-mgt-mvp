@@ -1,7 +1,7 @@
 <?php
 // dont come here directly
 if (!defined ('DIRECT_PASS')){
-	header ("Location: http://hisp.kastechnet.com/help+faq");
+	header ("Location: google.com");
 	exit;
 }             			  
 $show_edit_Table = true; //to show the edit table
@@ -73,7 +73,7 @@ if($edit_f == ''){
 				$myp->AlertSuccess("Great Work Admin! ", "Issues Fixed with the Session. You can now Set the days with this Session");
 			} else {
 				$dbh->rollBack();
-				$myp->AlertError('Fatal Error! ', 'Please Contact Kastech. <a class="btn btn-sm btn-default" href="http://hisp.kastechnet.com/report"> Click Here</a>');
+				$myp->AlertError('Fatal Error! ', 'Please Contact FZX. <a class="btn btn-sm btn-default" href="#"> Click Here</a>');
 			}
 		}
 }
@@ -116,7 +116,7 @@ if(isset($_POST['editmyass'])){
 			$myp->AlertSuccess('Great! ', 'Term days are Defined as: '.$myedit_s_f.', '.$myedit_s_s.' and '.$myedit_s_t.'. Before You Proceed, Please Check the Table Below');
 			$show_edit_Table = false;
 		} else {
-			$myp->AlertError('Fatal Error! ', 'Please Contact Kastech. <a class="btn btn-sm btn-default" href="http://hisp.kastechnet.com/contact"> Click Here</a>');
+			$myp->AlertError('Fatal Error! ', 'Please Contact FZX. <a class="btn btn-sm btn-default" href="#"> Click Here</a>');
 			$dbh->rollBack();
 			$show_edit_Table = false;
 		}

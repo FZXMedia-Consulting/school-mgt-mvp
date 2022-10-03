@@ -116,7 +116,7 @@ function cnfremove(id) {
 	<br> Edit the Grades to Match your School (In Ascending Order). 
 	<br /><font color="red"> <b>Warning!!</b> Do not Delete a Grade/Class. </font> <br />
 	<i> You can <b>delete</b> if there is an overflow, or <b>add</b> if the need arises. 
-	<br />Help? Email: <a href="mailto:info@kastechnet.com"> info@kastechnet.com </a> </i>
+	<br />Help? Email: <a href="mailto:info@fzxmedia.com.ng"> info@fzxmedia.com.ng </a> </i>
 	<br> <h3><?php echo $msgFormErr; ?></h3> 
 
 	<?php

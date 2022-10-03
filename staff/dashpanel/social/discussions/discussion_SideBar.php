@@ -37,7 +37,7 @@
 					<i class="fa fa-comments"></i> Posts: <?php print $post_count; ?> <br />
 					</p>
 					
-				<br /><p style="padding:8px"> Add On: Proudly Designed by kAsTech. </p>
+				<br /><p style="padding:8px"> Add On: Proudly Designed by FZX. </p>
 				<?php 
 					   $getImgQuery = "SELECT * FROM staff WHERE staff_image != '' ORDER BY RAND()";
 					   $db_getImgQuery = $dbh->prepare($getImgQuery);

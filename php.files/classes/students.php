@@ -75,7 +75,7 @@ class student extends kas_framework {
 				exit('<center>
 				<img src="'.$this->url_root('img/restricted.png').'" width="60%"/>
 				<img src="'.$this->url_root('img/sorry.png').'" width="50%"/>
-				'.$this->showDangerCallout('Your Current Package do not have the Priviledge to View this Page. Looks like you are on Kastech Classic Plan. This Page is for Premium Package Users Only').'</center>');
+				'.$this->showDangerCallout('Your Current Package do not have the Priviledge to View this Page. Looks like you are on FZX Classic Plan. This Page is for Premium Package Users Only').'</center>');
 			}
 	}
 	

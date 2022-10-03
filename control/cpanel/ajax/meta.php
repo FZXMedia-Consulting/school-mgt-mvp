@@ -16,7 +16,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="MySchoolApp School management system.">
-	<meta name="author" content="Kastech Network">
+	<meta name="author" content="FZX Network">
 
 	<!-- The styles -->
 	<link id="bs-css" href="../css/bootstrap-classic.css" rel="stylesheet">

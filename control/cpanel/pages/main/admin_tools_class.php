@@ -120,7 +120,7 @@ $editroomname = $_POST['editroomname'];
 			// insert the rooms names
 			$postinside = "INSERT INTO school_rooms(school_rooms_desc,room_grade) VALUES('$roomname','$roomgrade')";
 			$dbh_postinside = $dbh->prepare($postinside); $checkExec = $dbh_postinside->execute(); $dbh_postinside = null;
-				//upgraded by Ultimate Kelvin C - Kastech
+				//upgraded by Unknown - FZX
 				if ($checkExec) {
 					$myp->AlertSuccess('Nice Job! ', 'Room Created Succesfully');
 				} else {
@@ -147,7 +147,7 @@ $editroomname = $_POST['editroomname'];
 			}
 			
 			$gradename = $kas_framework->getValue('grades_desc', 'grades', 'grades_id', $cardgrade);		
-	  	  	//upgraded by Ultimate Kelvin C - Kastech
+	  	  	//upgraded by Unknown - FZX
 			
 		  $queryj = "select * from grades";
 		  $dbh_queryj = $dbh->prepare($queryj); $dbh_queryj->execute();  $mygrade = $dbh_queryj->rowCount();

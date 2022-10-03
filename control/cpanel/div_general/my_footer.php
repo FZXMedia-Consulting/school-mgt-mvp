@@ -27,7 +27,7 @@
 
 		<style type="text/css">footer { /*show a little footer in the rightdown corner*/position: fixed;bottom: 0;right: 0;padding: 3px;font-weight: lighter;text-decoration: none;z-index: 100;background-color: rgba(255,255,255,0.7);font-size: 14px;border: 1px solid #CCC;}footer a {color: rgb(0,0,0);}footer:hover {cursor: default;} @media only screen and (max-width:500px) { footer { position:relative; text-align:center; width:94%; margin:0 auto } } </style>
 			<footer>
-				<a target="_new" href="http://facebook.com/sunnybens">Ben</a> & <a target="_new" href="http://facebook.com/kelvin.ugbana">Kelvin</a>&nbsp;</a> 2014- <?php echo date('Y') ?>. Powered by: <a target="_new" href="http://hisp.kastechnet.com" target="_blank">kAsTech</a>
+			
 			</footer>
 		
 		<?php } ?>

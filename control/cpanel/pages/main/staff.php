@@ -43,7 +43,7 @@ $biototal = $kas_framework->countAll('staff');
 	$doit = DecodeToken($_GET['ids']);
 	 $Query = "UPDATE staff SET staff_status ='1' WHERE staff_id='$doit'";
 	 $dbh_Query = $dbh->prepare($Query); $dbh_Query->execute(); $rowCount = $dbh_Query->rowCount(); $dbh_Query = null;
-	 //upgraded by Ultimate Kelvin C - Kastech
+	 //upgraded by Unknown - FZX
 		if ($rowCount == 1) {
 			$myp->AlertSuccess('Success! ', 'Staff profile Verified!');
 		} else {

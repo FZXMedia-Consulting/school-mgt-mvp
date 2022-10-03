@@ -70,7 +70,7 @@ Component: eg PTA<br />
 	@$sql ="INSERT INTO `school_fees` (`id`, `component`, `grades`, `grades_term`, `school_year`, `price`, `date`, `creator`, `comment`, `active`) VALUES (NULL, '$value', '$gr', '$term', '$ses', '', '', '', '', '');";
 	$dbh_sql = $dbh->prepare($sql); $checkEx = $dbh_sql->execute(); $dbh_sql = null;
 	 if (!$checkEx) {
-	  die('Error: Contact Kastech Network');
+	  die('Error: Contact FZX Network');
 	}
 	echo '<font color="green">Well done, <strong>'.$value.'</strong> was added in the database, you can now add the price, click back and find it by typing '.$value.' in filter form</font>';
 ?>

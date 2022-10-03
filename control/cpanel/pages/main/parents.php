@@ -37,7 +37,7 @@ if(isset($_GET['ids'])){
 $doit = $_GET['ids'];
 	$sSQL = "UPDATE student_parents SET student_parents_status ='1' WHERE student_parents_id='$doit'";
 	$dbh_sSQL = $dbh->prepare($sSQL); $checkExec = $dbh_sSQL->execute(); $dbh_sSQL = null;
-	//upgraded by Ultimate Kelvin C - Kastech
+	//upgraded by Unknown - FZX
 		if ($checkExec == 1) {
 			$myp->AlertSuccess('Success Admin! ', 'Parent Profile Verified');
 		} else {

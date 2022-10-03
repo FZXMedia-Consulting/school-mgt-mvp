@@ -6,7 +6,7 @@ defined( '_VALID' ) or die( 'Restricted access' );
 
 class kasVersion {
 	/** @var string Product */
-	var $PRODUCT 	= 'kasTech School Portal App';
+	var $PRODUCT 	= 'FZX School Portal App';
 	var $RELEASE 	= '2.1.8';
 	var $DEV_STATUS = 'Stable';
 	var $DEV_LEVEL 	= '01';
@@ -15,8 +15,8 @@ class kasVersion {
 	var $RELDATE 	= '2014-12-10';
 	var $RELTIME 	= '12:00';
 	var $RELTZ 		= 'UTC';
-	var $COPYRIGHT 	= "Copyright (C) 2010 - 2017 kasTech Software foundation. All rights reserved.";
-	var $URL 		= 'KAS - Student Management System';
+	var $COPYRIGHT 	= "Copyright (C) 2022 FZX Software foundation. All rights reserved.";
+	var $URL 		= 'FZX - Student Management System';
 	/** @var string Whether site is a production = 1 or demo site = 0: 1 is default */
 	var $SITE 		= 1;
 	/** @var string Whether site has restricted functionality mostly used for demo sites: 0 is default */

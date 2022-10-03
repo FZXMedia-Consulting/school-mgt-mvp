@@ -75,7 +75,7 @@ $np = md5($np);
 	
 @$sql ="UPDATE `web_users` SET web_users_password = '$np' WHERE web_users_id = '$usid' AND web_users_type = '$utype'";
 $dbh_sSQL = $dbh->prepare($sql); $dbh_sSQL->execute(); $rowCount = $dbh_sSQL->rowCount(); $dbh_sSQL = null;
-	//upgraded by Ultimate Kelvin C - Kastech
+	//upgraded by Unknown - FZX
 	if ($rowCount == 1) {
 		$myp->AlertSuccess('Great Work! ', 'Password Change was succesfull.');
 	} else {

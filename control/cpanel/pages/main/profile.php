@@ -110,7 +110,7 @@ $portal_bcode = $getVars->school_bar_code_app
 	$dbh_mainUpdate = $dbh->prepare($mainUpdate);
 	$dbh_mainUpdate->execute();
 	$rowsCount = $dbh_mainUpdate->rowCount();
-		//upgraded by Ultimate Kelvin C - Kastech
+		//upgraded by Unknown - FZX
 	if ($rowsCount == 1){
 		$myp->AlertSuccess('Success! ', 'School Profile Updated!</font> <a href="main?page=profile">Proceed to View</a>');
 	} else {
@@ -133,7 +133,7 @@ $portal_bcode = $getVars->school_bar_code_app
 						 	if ($countX == 1) {
 								$myp->AlertSuccess('Well Done! ', 'School Profile Added Succesfully.');
 							} else {
-								$myp->AlertError('Fatal Error!', 'All methods Failed. Please Contact kAsTech NetworkNig Now!');
+								$myp->AlertError('Fatal Error!', 'All methods Failed. Please Contact FZX NetworkNig Now!');
 							}
 				}
 	

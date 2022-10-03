@@ -39,7 +39,7 @@ $classname = $kas_framework->getValue('grades_desc', 'grades', 'grades_id', $id)
 	  $queryj = "SELECT * FROM grades";
 	  $dbh_queryj = $dbh->prepare($queryj); $dbh_queryj->execute();  $mygrade = $rowCount = $dbh_queryj->rowCount();
 	  
-		//upgraded by Ultimate Kelvin C - Kastech
+		//upgraded by Unknown - FZX
 		while ($get_grades = $dbh_queryj->fetch(PDO::FETCH_OBJ)) {
 			print '<a class="btn btn-sm btn-default" style="margin:4px" href="fees?page=defaultfees&id='.$get_grades->grades_id.'#mainsetting">'.$get_grades->grades_desc.'</a>';
 		}	  
@@ -122,7 +122,7 @@ $classname = $kas_framework->getValue('grades_desc', 'grades', 'grades_id', $id)
 					$myp->AlertSuccess('Good Job! ', 'Your changes were saved. Please cross-check');
 					$dbh->commit();
 				} else {
-					$myp->AlertError('Fatal Error! ', 'We got Confused. Please Contact kAsTech Network Limited');
+					$myp->AlertError('Fatal Error! ', 'We got Confused. Please Contact FZX Network Limited');
 					$dbh->rollBack();
 				}
 			}

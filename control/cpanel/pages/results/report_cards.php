@@ -65,7 +65,7 @@ $queryl = $dbh->prepare("select * from std_report_cards WHERE session = '$curren
   }
   
 	 $queryj = $dbh->prepare("select * from grades"); $queryj->execute();  
-		//upgraded by Ultimate Kelvin C - Kastech
+		//upgraded by Unknown - FZX
 		while ($get_grades = $queryj->fetch(PDO::FETCH_OBJ)) {
 			print '<a class="btn btn-sm btn-default" style="margin:4px" href="results?page=report_cards&gid='.$get_grades->grades_id.'">'.$get_grades->grades_desc.'</a>';
 		}

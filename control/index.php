@@ -77,8 +77,8 @@
 
  <div style="position:fixed; bottom:0px; color:#000; text-align:center; background-color:#FFF; width:100%; border-radius:30px 30px 0 0; z-index:950;">
  <p> 
-  <a href="http://hisp.kastechnet.com/help+faq"> Help Page</a> | <a href="http://hisp.kastechnet.com/privacy">Privacy Policy</a>  | <a href="http://hisp.kastechnet.com/terms">Terms Of Use</a>. &nbsp;&nbsp;&nbsp;&nbsp;
-  <font color="">Powered by  <?php echo "<a href='http://hisp.kastechnet.com/'> kasTech School Portal.</a> <a href='http://hisp.kastechnet.com/'> Version V" . $release." </a> Released On ".$reldate; ?> </font>
+  <a href="#"> Help Page</a> | <a href="#">Privacy Policy</a>  | <a href="#">Terms Of Use</a>. &nbsp;&nbsp;&nbsp;&nbsp;
+  <font color="">Powered by  <?php echo "<a href='#'> FZX School Portal.</a> <a href='#'> Version V" . $release." </a> Released On ".$reldate; ?> </font>
  </p></div>
   
 </body>

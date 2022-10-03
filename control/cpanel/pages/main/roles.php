@@ -20,7 +20,7 @@ if(isset($_POST['takeaction'])){
 	
 	$query=  "UPDATE staff_role SET `$dowhat` = '0' WHERE `id` = '$row_r_id'";
 	$dbh_query = $dbh->prepare($query); $dbh_query->execute(); $rowCount = $dbh_query->rowCount(); $dbh_query = null;
-	//upgraded by Ultimate Kelvin C - Kastech
+	//upgraded by Unknown - FZX
 	if ($rowCount == 1){
 	$answer = '<div class="alert alert-success"> <button type="button" class="close" data-dismiss="alert">*</button>
 			<strong>Good Job!</strong> You successfully deleted '.$stfname.' from  '.$dowhat.'</div>';
@@ -256,7 +256,7 @@ if(isset($_POST['staffid'])){
 $title="Roles and staff functions";
 
 
-//added by kelvin - Kastech for the count of the roles aleady assigned
+//added by Unknown - FZX for the count of the roles aleady assigned
 function countAdminsForRole($role) {
 	//since we dont know the asolute URL and we dont care about it, lets connect our PDO file
 	(file_exists('../../php.files/classes/pdoDB.php'))? include ('../../php.files/classes/pdoDB.php'): include ('../../../php.files/classes/pdoDB.php');

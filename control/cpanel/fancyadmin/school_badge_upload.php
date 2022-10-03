@@ -61,7 +61,7 @@ $pushin = move_uploaded_file($source, $target);
 	$dbh_Query->execute();
 	$rowCount = $dbh_Query->rowCount();
 	 
-	 //upgraded by Ultimate Kelvin C - Kastech
+	 //upgraded by Unknown - FZX
 			if ($rowCount == 0) {
 				print ('Something is not right. Could not Update the logo/badge. This picture is exaclty the same as the one in database. Think am wrong? Rename the photo before upload');
 				//echo $randomid;

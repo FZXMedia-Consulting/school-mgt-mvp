@@ -1,5 +1,5 @@
 <?php
-//programmed by the Ultimate Kelvin - Kastech
+//programmed by the Ultimate Kelvin - FZX
 session_start();
 if(!isset($_SESSION['UserID']) || @$_SESSION['UserType'] != "A")  {
     print "Session Expired. Please you may have to Log In again";

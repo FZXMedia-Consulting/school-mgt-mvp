@@ -1,5 +1,5 @@
 <?php 
-//total modification by Ultimated Kelvin - Kastech
+//total modification by Unknown - FZX
 
 if (!defined('MYSCHOOLAPPADMIN_CORE'))
 {// if the user access this page directly, take his ass back to home 

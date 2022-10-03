@@ -88,7 +88,7 @@ if (empty($_FILES['myphoto'])){echo "Error: Your must be manipulating something.
 				$dbh_Query->execute();
 				$rowCount = $dbh_Query->rowCount();
 				$dbh_Query = null;
-					//upgraded by Ultimate Kelvin C - Kastech
+					//upgraded by Unknown - FZX
 					if ($rowCount == 0) {
 						print 'Error!  Something is not right. Could not Update the Picture. Rename the photo before upload';
 						//echo $randomid;

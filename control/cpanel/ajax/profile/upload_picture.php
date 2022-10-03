@@ -93,7 +93,7 @@ if (empty($_FILES['myphoto'])){echo "Error: Your must be manipulating something.
 		$Q = "UPDATE `studentbio` SET `studentbio_pictures` = '". $uniqe_name.$myphoto. "' WHERE studentbio_id = '".$postid."'";
 		$dbh_sSQL = $dbh->prepare($Q); $dbh_sSQL->execute(); $rowCount = $dbh_sSQL->rowCount(); $dbh_sSQL = null;
 		
-		//upgraded by Ultimate Kelvin C - Kastech
+		//upgraded by Uknown - FZX
 			if ($rowCount == 0) {
 				print ('Error! Something is not right. Could not Update the Picture. This picture is exaclty the same as the one in database. Think am wrong? Rename the photo before upload');
 			//echo $randomid;

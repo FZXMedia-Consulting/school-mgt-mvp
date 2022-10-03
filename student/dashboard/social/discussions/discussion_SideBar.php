@@ -35,7 +35,7 @@
 					<i class="fa fa-comments"></i> Posts: <?php print $post_count; ?> <br />
 					</p>
 					
-				<br /><p style="padding:8px; text-align: center"> Student Gallery Add On: Proudly Designed by Kastech Network. </p>
+				<br /><p style="padding:8px; text-align: center"> Student Gallery Add On: Proudly Designed by FZX Network. </p>
 				<?php 	 $getImgQuery = "SELECT * FROM studentbio WHERE studentbio_pictures != '' ORDER BY RAND()";
 							$db_getImgQuery = $dbh->prepare($getImgQuery);
 							$db_getImgQuery->execute();

@@ -53,7 +53,7 @@
 		 
 		<div id="myTabContent" class="tab-content">
 			<div class="tab-pane active" id="info">
-				<h3><?php echo _SCHOOL_NAME;?>.&nbsp;<small>Member MSA <?php echo $member_status;?>&nbsp;<a href="https://kastechnet.com/" title="What is this" target="_blank">? </a></small></h3>
+				<h3><?php echo _SCHOOL_NAME;?>.&nbsp;<small>Member MSA <?php echo $member_status;?>&nbsp;<a href="#" title="What is this" target="_blank">? </a></small></h3>
 				<p>Portal launch date: <strong><?php echo $app_launch;?></strong></p>
 				<img alt="School Badge" width="120px" class="charisma_qr center" src="../../files/images/<?php echo $badge;?>" />
 			</div>
@@ -63,8 +63,8 @@
 				<p><img alt="logo" width="120px" class="charisma_qr center" src="../../files/images/<?php echo $mylogo;?>" />
 			</p>
 				<p><em>Terms/Conditions apply </em></p>
-				<p>Certified to use by: <strong>Benjamin & Kelvin</strong><br />
-				Kastech<sup> TM</sup> - Kastech Network Limited</p>
+				<p><br />
+				FZX<sup> TM</sup> - FZX Network Limited</p>
 
 			</div>
 			<div class="tab-pane" id="messages">

@@ -10,7 +10,7 @@ if (!defined ('DIRECT_PASS')){echo 'who are you? HAHAHA, WHAT ARE YOU DOING, ARE
 <?php $myp->AlertInfo('Hey Admin! ', 'Please Take note that the Date format here is yyyy-mm-dd if the date control format dosent appear because of your browser. eg. 2015-09-30');
 
 
-//upgraded by Ultimate Kelvin C - Kastech
+//upgraded by Unknown - FZX
 if (isset($_GET['delete'])) {
 	$delID = $_GET['delete'];
 		 $sSQL = "DELETE FROM school_calendar WHERE id = '".$delID."'";
@@ -86,7 +86,7 @@ $edit_start = substr($edit_start, -2).'/'.substr($edit_start, -5, 2).'/'.substr(
 $edit_end = substr($edit_end, -2).'/'.substr($edit_end, -5, 2).'/'.substr($edit_end, 0, 4);
 // insert the changes
 $process_fm_ed_vac_date1 = "UPDATE school_calendar SET event_name ='$mmyevent', start_date='$edit_start', end_date ='$edit_end', event_color='$edit_color' WHERE id='$call_edit_id'";// first 
-	//upgraded by Ultimate Kelvin C - Kastech
+	//upgraded by Unknown - FZX
 	$dbh_process_fm_ed_vac_date1 = $dbh->prepare($process_fm_ed_vac_date1); $dbh_process_fm_ed_vac_date1->execute(); $rowCount = $dbh_process_fm_ed_vac_date1->rowCount(); $dbh_process_fm_ed_vac_date1 = null;
 	if ($rowCount == 1) {
 		$myp->AlertSuccess('Nice Job! ', 'School Event Succesfully Edited. Look at the table below fot the changes');

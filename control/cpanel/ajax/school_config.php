@@ -40,7 +40,7 @@ if ($action=="edit"){
 	$sSQL="UPDATE tbl_config SET messageto_staff=".tosql($messageto_staff, "Text").", messageto_students=".tosql($messageto_students, "Text").", messageto_parents=".tosql($messageto_parents, "Text").",messageto_all=".tosql($messageto_all, "Text").", default_city=".tosql($default_city, "Text").", default_state='$default_state', default_zip=".tosql($default_zip, "Text").", default_entry_date=".tosql($default_entry_date, "Text")." WHERE id=1";
 		$dbh_sSQL = $dbh->prepare($sSQL); $dbh_sSQL->execute(); $rowCount = $dbh_sSQL->rowCount(); $dbh_sSQL = null;
 		
-		//upgraded by Ultimate Kelvin C - Kastech
+		//upgraded by Uknown - FZX
 		if ($rowCount == 1) {
 			$mysuccess = $myp->AlertSuccess('Good Job! ', 'General Welcome Messages Saved!');
 		} else {

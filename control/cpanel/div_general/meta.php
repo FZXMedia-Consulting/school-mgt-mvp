@@ -19,8 +19,8 @@ echo'<title>'.$title.'</title>';
 ?>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="kasTech School Management System. We understand the process of building websites and mobile applications through our expertise and produce award winning solutions that become popular and make our clients achieve their goals and values. Kastech School portal is Equipped with more than 50 Features that covers all sections of a High School">
-	<meta name="author" content="Kastech Network Limited">
+	<meta name="description" content="FZX School Management System. We understand the process of building websites and mobile applications through our expertise and produce award winning solutions that become popular and make our clients achieve their goals and values. FZX School portal is Equipped with more than 50 Features that covers all sections of a High School">
+	<meta name="author" content="FZX Network Limited">
 
 	<!-- The styles -->
 	<link id="bs-css" href="css/bootstrap-classic.css" rel="stylesheet">

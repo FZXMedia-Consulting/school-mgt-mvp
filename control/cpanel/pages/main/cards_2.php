@@ -65,7 +65,7 @@ $errort = ' <a href="">Click Here Now</a></div>';
 
 	$key="";
 	$serial="";
-	//upgraded by the ultimate Kelvin - Kastech
+	//upgraded by the Unknown - FZX
 	$countInserted = 0;
 
 		for($i = 1; $i <= $q; $i++) {

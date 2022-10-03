@@ -83,7 +83,7 @@ $tblid = $_POST['tblid'];
 if ($countExec > 0){
 		pageSuccess('Good Job!', 'Your changes successfully saved.'.' <a href="">Accept it</a>');
 	} else {
-		pageError('Fatal Error!', 'We got Confused. Please Contact kAsTech Network');
+		pageError('Fatal Error!', 'We got Confused. Please Contact FZX Network');
 	}
  }
 ?>
