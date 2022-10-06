@@ -19,8 +19,8 @@
 ?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="kAsTech School Management System.">
-	<meta name="author" content="kAsTech Network Limited">
+	<meta name="description" content="FZX School Management System.">
+	<meta name="author" content="FZX Network Limited">
 
 	<!-- The styles -->
 	<link id="bs-css" href="../css/bootstrap-classic.css" rel="stylesheet">

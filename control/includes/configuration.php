@@ -46,6 +46,10 @@ $database_pass = '';
 $database_db = 'school_mgt';
 $database_type = 'mysql';
 
+//added by eyo because $dbh is not working in ez_sql.php
+$econ = mysqli_connect($database_host,$database_user,$database_pass,$database_db);
+
+
  $dsn = $database_type.":dbname=".$database_db.";host=".$database_host;
 	try {
 		$dbh = new PDO($dsn, $database_user, $database_pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));

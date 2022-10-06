@@ -4888,7 +4888,7 @@ CREATE TABLE `tbl_config` (
 --
 
 INSERT INTO `tbl_config` (`id`, `school_name`, `current_year`, `messageto_staff`, `messageto_parents`, `messageto_students`, `messageto_all`, `default_city`, `default_state`, `default_zip`, `default_entry_date`, `portal_launch_date`, `school_logo_path`, `school_badge_path`, `school_bar_code_app`, `app_membership`, `school_app_version`, `school_app_framework`, `portal_url`, `app_licence`) VALUES
-(1, 'FZX', 7, 'Welcome great Staff', 'Welcome Super parent     ', 'Welcome Great Students, leaders of tomorrow ', 'Welcome to FZX Group of Schools, Anambra, Nigeria', 'Anambra ', 'Anambra', '05896 ', '12/27/2014', '09/12/2015', '1662999622_lb_logo.jpeg', '1662999615_lb_logo.jpeg', 'qrcode.png', 0, '1.8.0', 'FZX', '', '');
+(1, 'FZX', 7, 'Welcome great Staff', 'Welcome Super parent     ', 'Welcome Great Students, leaders of tomorrow ', 'Welcome to Kastech Group of Schools, Abuja, Nigeria', 'Abuja ', 'Abuja', '05896 ', '12/27/2014', '09/12/2015', '1662999622_lb_logo.jpeg', '1662999615_lb_logo.jpeg', 'qrcode.png', 0, '1.8.0', 'kAsTech', '', '');
 
 -- --------------------------------------------------------
 
@@ -4935,11 +4935,11 @@ CREATE TABLE `tbl_grade_domains` (
 --
 
 INSERT INTO `tbl_grade_domains` (`id`, `school_names`, `status`, `school_logo_path`, `school_badge_path`, `address`, `term_result_fee`) VALUES
-(1, 'FZX Pre-nursery School', 0, 'terans.png', 'nsbadge.png', 'First Building', 500),
-(2, 'FZX Nursery School', 0, 'terans.png', 'nsbadge.png', 'First Building', 500),
-(3, 'FZX Primary School', 0, 'teraps.png', 'psbadge.png', 'First Floor', 600),
-(4, 'FZX Junior Secondary School', 0, 'terajss.png', 'jssbadge.png', 'Junior Block', 800),
-(5, 'FZX Senior Secondary School', 0, 'terasss.png', 'ssbadge.png', 'Main Building', 1000);
+(1, 'Kastech Pre-nursery School', 0, 'terans.png', 'nsbadge.png', 'First Building', 500),
+(2, 'Kastech Nursery School', 0, 'terans.png', 'nsbadge.png', 'First Building', 500),
+(3, 'Kastech Primary School', 0, 'teraps.png', 'psbadge.png', 'First Floor', 600),
+(4, 'Kastech Junior Secondary School', 0, 'terajss.png', 'jssbadge.png', 'Junior Block', 800),
+(5, 'Kastech Senior Secondary School', 0, 'terasss.png', 'ssbadge.png', 'Main Building', 1000);
 
 -- --------------------------------------------------------
 
@@ -4963,7 +4963,7 @@ CREATE TABLE `tbl_portal_emails` (
 --
 
 INSERT INTO `tbl_portal_emails` (`id`, `from_email`, `sender_type`, `from_name`, `subject`, `message`, `date`, `status`) VALUES
-(2, 'info@hisp.FZXnet.com', 'D', 'Okokoh Benjamin', 'Who is running this demo', 'I just wanted to add new message from public as demo, thanks you', '18/02/2016', 1),
+(2, 'info@hisp.kastechnet.com', 'D', 'Okokoh Benjamin', 'Who is running this demo', 'I just wanted to add new message from public as demo, thanks you', '18/02/2016', 1),
 (3, 'chisom.mum@gmail.com', 'D', 'chisom contact', 'teat chisom contact ', 'Hmm,', '31/08/2016', 1),
 (4, 'kelvin@hypertera.ng', 'A', 'Mr. Ugbana Kester E', 'hello admin', 'I want to change my profile picture now.', '09/03/2018', 1);
 
@@ -5020,7 +5020,7 @@ CREATE TABLE `tbl_school_profile` (
 --
 
 INSERT INTO `tbl_school_profile` (`id`, `phone`, `fax`, `email`, `mobile`, `adress`, `state`, `latitude`, `longitude`, `country`) VALUES
-(1, '', '', 'info@hisp.FZXnet.com', '08166555624', 'Plot 7 Ave Mariah Street, Opposite Airport  ', 'Calabar', '', '', 'Nigeria ');
+(1, '', '', 'info@hisp.kastechnet.com', '08166555624', 'Plot 7 Ave Mariah Street, Opposite Airport  ', 'Calabar', '', '', 'Nigeria ');
 
 -- --------------------------------------------------------
 

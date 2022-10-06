@@ -59,62 +59,65 @@ include_once "configuration.php";
 			// Keep track of the last query for debug..
 			$this->last_query = $query;
 			
+			//require "configuration.php";
+
 			// Perform the query via std mysqli_query function..
-			$this->result = mysqli_query($this->dbh, $query);
+			// echo $econ;
+			// $this->result = mysqli_query($econ, $query);
 	
-			if ( mysqli_error($this->dbh) ) 
-			{
+			// if ( mysqli_error($this->dbh) ) 
+			// {
 				
-				// If there is an error then take note of it..
-				$this->print_error();
+			// 	// If there is an error then take note of it..
+			// 	$this->print_error();
 	
-			}
-			else
-			{
+			// }
+			// else
+			// {
 	
-				// In other words if this was a select statement..
-				if ( $this->result )
-				{
+			// 	// In other words if this was a select statement..
+			// 	if ( $this->result )
+			// 	{
 	
-					// =======================================================
-					// Take note of column info
+			// 		// =======================================================
+			// 		// Take note of column info
 					
-					$i=0;
-					while ($i < @mysqli_num_fields($this->result))
-					{
-						$this->col_info[$i] = @mysqli_fetch_field($this->result);
-						$i++;
-					}
+			// 		$i=0;
+			// 		while ($i < @mysqli_num_fields($this->result))
+			// 		{
+			// 			$this->col_info[$i] = @mysqli_fetch_field($this->result);
+			// 			$i++;
+			// 		}
 	
-					// =======================================================				
-					// Store Query Results
+			// 		// =======================================================				
+			// 		// Store Query Results
 					
-					$i=0;
-					while ( $row = @mysqli_fetch_object($this->result) )
-					{ 
+			// 		$i=0;
+			// 		while ( $row = @mysqli_fetch_object($this->result) )
+			// 		{ 
 	
-						// Store relults as an objects within main array
-						$this->last_result[$i] = $row;
+			// 			// Store relults as an objects within main array
+			// 			$this->last_result[$i] = $row;
 						
-						$i++;
-					}
+			// 			$i++;
+			// 		}
 					
-					@mysqli_free_result($this->result);
+			// 		@mysqli_free_result($this->result);
 	
-					// If there were results then return true for $db->query
-					if ( $i )
-					{
-						return true;
+			// 		// If there were results then return true for $db->query
+			// 		if ( $i )
+			// 		{
+			// 			return true;
 		
-					}
-					else
-					{
-						return false;
-					}
+			// 		}
+			// 		else
+			// 		{
+			// 			return false;
+			// 		}
 	
-				}
+			// 	}
 	
-			}
+			// }
 		}
 	
 		// ==================================================================

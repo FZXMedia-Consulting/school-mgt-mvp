@@ -175,10 +175,13 @@ include_once "configuration.php";
 			// get total number of results
 			$this->get_num_results($query);
 
+			include_once 'ez_sql.php';
+			$db = new db();
+
 			// Do query
 			$this->results = $db->get_results($query . " LIMIT {$_REQUEST['BRSR']},$this->num_results_per_page",ARRAY_N);
 
-			$this->cur_num_results = count($this->results);
+			$this->cur_num_results = count((array)$this->results);
 
 		}
 
@@ -192,6 +195,9 @@ include_once "configuration.php";
 
 			// Count total number of results
 			$this->get_num_results("SELECT count(*) FROM $table ".($where?"WHERE $where ":null));
+
+			require 'ez_sql.php';
+			$db = new db();
 
 			// Do query
 			$this->results = $db->get_results("SELECT A.* 

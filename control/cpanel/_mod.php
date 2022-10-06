@@ -25,6 +25,6 @@ include_once "../../php.files/classes/kas-framework.php";
 //since we dont know the asolute URL and we dont care about it, lets connect our PDO file
 (file_exists('../../php.files/classes/pdoDB.php'))? include ('../../php.files/classes/pdoDB.php'): include ('../../../php.files/classes/pdoDB.php');
 
-header ("Location: http://hisp.kastechnet.com/help+faq");
+header ("Location: google.com");
 
 ?>

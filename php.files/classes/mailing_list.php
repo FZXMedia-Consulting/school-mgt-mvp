@@ -2,13 +2,13 @@
 
 class mailing_list extends kas_framework {
 
-	public $_Port 				= 25;
+	public $_Port 				= 465;
 	public $_CharSet 			= 'utf-8';
-	public $_Hostname 			= 'mail.supremecluster.com';
-	public $_Username 			= 'info@fzxmedia.com.ng';
-	public $_Password 			= 'kas_mail2016';
+	public $_Hostname 			= 'mail.fzxmedia.com.ng';
+	public $_Username 			= 'eakak@fzxmedia.com.ng';
+	public $_Password 			= 'SCity123##..1';
 	//For portal attempted hacking reports
-	public $_HackReportMail		= 'hackreport@fzxmedia.com.ng';
+	public $_HackReportMail		= 'eakak@fzxmedia.com.ng';
 
 	public function SendUserConfirmationEmail($send_to_mail, $reg_user_name, $from_email, $confirmation_code, $schoolname, $user) {
 		$mailer				 	= new PHPMailer();  //new instance of the mailer   
